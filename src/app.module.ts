@@ -6,6 +6,7 @@ import { AppService } from './app.service';
 import { Contact } from './entities/contact.entity';
 import { ContactService } from './contact.service';
 import { ContactsController } from './contacts/contacts.controller';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { ContactsController } from './contacts/contacts.controller';
       synchronize: true,
     }),
     TypeOrmModule.forFeature([Contact]),
+    AuthModule,
 ],
   controllers: [AppController, ContactsController],
   providers: [AppService, ContactService],
